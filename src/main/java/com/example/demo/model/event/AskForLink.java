@@ -1,8 +1,7 @@
 package com.example.demo.model.event;
 
-import com.example.demo.model.Bank;
+import com.example.demo.model.payment_link.Bank;
 import lombok.Builder;
-import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 import java.time.Instant;

@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.model.payment_link;
 
 public enum PaymentLinkStatus {
 
