@@ -1,7 +1,8 @@
-package com.example.demo.model.event;
+package com.example.demo.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.example.event.*;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
@@ -11,5 +12,5 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = SubmitLink.class, name = "SUBMIT_LINK"),
         @JsonSubTypes.Type(value = RejectLink.class, name = "REJECT_LINK"),
 })
-public sealed interface PaymentEventDto permits AskForLink, SendLink, OpenLink, SubmitLink, RejectLink{
+public interface PaymentEventDto {
 }
