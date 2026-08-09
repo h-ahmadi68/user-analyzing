@@ -14,14 +14,14 @@ public class EventService {
 
 
     @SuppressWarnings("unchecked")
-    public EventService(List<EventHandler<? extends PaymentEvent>> actionHandlers) {
+    public EventService(List<EventHandler<? extends PaymentEvent>> eventHandlers) {
         eventHandlerMap = new HashMap<>();
-        for (EventHandler<? extends PaymentEvent> actionHandler : actionHandlers) {
-            eventHandlerMap.put(actionHandler.getActionClass(), (EventHandler<PaymentEvent>) actionHandler);
+        for (EventHandler<? extends PaymentEvent> eventHandler : eventHandlers) {
+            eventHandlerMap.put(eventHandler.getActionClass(), (EventHandler<PaymentEvent>) eventHandler);
         }
     }
 
-    public <E extends PaymentEvent> void actionProcess(E paymentEvent) {
+    public <E extends PaymentEvent> void eventProcess(E paymentEvent) {
         eventHandlerMap.get(paymentEvent.getClass()).handle(paymentEvent);
     }
 

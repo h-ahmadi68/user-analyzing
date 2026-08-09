@@ -6,5 +6,5 @@ public interface EventHandler<E extends PaymentEvent> {
 
     Class<? extends PaymentEvent> getActionClass();
 
-    void handle(E action);
+    void handle(E event);
 }
