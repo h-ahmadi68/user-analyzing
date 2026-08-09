@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.event.PaymentEvent;
+import com.example.demo.model.dto.PaymentEventDto;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 class EventController {
 
     @PostMapping("add-event")
-    PaymentEvent addEvent(@RequestBody PaymentEvent event) {
+    PaymentEventDto addEvent(@RequestBody PaymentEventDto event) {
         return event;
     }
 }

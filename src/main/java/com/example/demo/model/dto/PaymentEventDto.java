@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.example.event.*;
 
+import java.time.Instant;
+
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = AskForLink.class, name = "ASK_FOR_LINK"),
@@ -12,5 +14,11 @@ import org.example.event.*;
         @JsonSubTypes.Type(value = SubmitLink.class, name = "SUBMIT_LINK"),
         @JsonSubTypes.Type(value = RejectLink.class, name = "REJECT_LINK"),
 })
-public interface PaymentEventDto {
+public sealed interface PaymentEventDto
+        permits AskForLinkDto, SendLinkDto, OpenLinkDto, SubmitLinkDto, RejectLinkDto {
+
+    Instant timestamp();
+
+    PaymentEvent toModel();
+
 }
