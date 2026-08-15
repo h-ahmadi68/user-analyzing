@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.event_handler;
 
 import com.example.demo.service.event_publisher.KafkaEventPublisher;
 import lombok.RequiredArgsConstructor;

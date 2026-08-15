@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.event_handler;
 
 import org.example.event.PaymentEvent;
 

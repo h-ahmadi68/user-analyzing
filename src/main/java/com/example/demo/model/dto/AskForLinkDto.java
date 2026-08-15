@@ -25,7 +25,7 @@ public record AskForLinkDto(Instant timestamp, String userId, BigDecimal amount,
     @Override
     public PaymentEvent toModel() {
         return AskForLink.builder()
-                .timestamp(timestamp)
+                .timestamp(Instant.now())
                 .userId(userId)
                 .amount(amount)
                 .bank(bank)
