@@ -24,7 +24,7 @@ public record SendLinkDto(Instant timestamp, String paymentLinkId, String userId
     @Override
     public PaymentEvent toModel() {
         return SendLink.builder()
-                .timestamp(timestamp)
+                .timestamp(Instant.now())
                 .paymentLinkId(paymentLinkId)
                 .userId(userId)
                 .url(url)

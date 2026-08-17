@@ -22,7 +22,7 @@ public record RejectLinkDto(Instant timestamp, String paymentLinkId,
     @Override
     public PaymentEvent toModel() {
         return RejectLink.builder()
-                .timestamp(timestamp)
+                .timestamp(Instant.now())
                 .paymentLinkId(paymentLinkId)
                 .userId(userId)
                 .build();

@@ -4,7 +4,6 @@ package com.example.demo.service.event_handler;
 import com.example.demo.service.event_publisher.KafkaEventPublisher;
 import lombok.RequiredArgsConstructor;
 import org.example.event.PaymentEvent;
-import org.example.event.SendLink;
 import org.example.event.SubmitLink;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +15,7 @@ public class SubmitLinkEventHandler implements EventHandler<SubmitLink> {
 
     @Override
     public Class<? extends PaymentEvent> getActionClass() {
-        return SendLink.class;
+        return SubmitLink.class;
     }
 
     @Override

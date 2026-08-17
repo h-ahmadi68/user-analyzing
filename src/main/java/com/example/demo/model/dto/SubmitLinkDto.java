@@ -22,7 +22,7 @@ public record SubmitLinkDto(Instant timestamp, String paymentLinkId,
     @Override
     public PaymentEvent toModel() {
         return SubmitLink.builder()
-                .timestamp(timestamp)
+                .timestamp(Instant.now())
                 .paymentLinkId(paymentLinkId)
                 .userId(userId)
                 .build();
