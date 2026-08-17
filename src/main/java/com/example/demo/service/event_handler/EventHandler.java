@@ -1,0 +1,10 @@
+package com.example.demo.service.event_handler;
+
+import org.example.event.PaymentEvent;
+
+public interface EventHandler<E extends PaymentEvent> {
+
+    Class<? extends PaymentEvent> getActionClass();
+
+    void handle(E event);
+}
